@@ -1,13 +1,10 @@
 spring:
   application:
     name: msclientes
-#  config:
-#    import: configserver
   cloud:
     config:
       enabled: false
-    import-check:
-      enabled: false
+
 server:
   port: 0
 
@@ -15,5 +12,6 @@ eureka:
   client:
     service-url :
       defaultZone: http://localhost:8761/eureka
-    instance:
-      instace-id : ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
